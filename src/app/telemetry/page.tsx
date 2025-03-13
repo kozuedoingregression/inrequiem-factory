@@ -202,14 +202,9 @@ function Telemetry() {
                 </div>
             </fieldset>
             <form onSubmit={createOrUpdateTask}>
-                {/* <input
-            type="text"
-            name="peak"
-            placeholder="Enter peak"
-            onChange={(e) => setPeak(e.target.value)}
-            value={peak}
-          /> */}
-                <button className="pl-52" type="submit">save</button>
+                <div className="flex justify-center">
+                    <button className="px-4 py-2 ">Save</button>
+                </div>
             </form>
         </>
     );
