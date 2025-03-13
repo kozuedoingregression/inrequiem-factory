@@ -14,6 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="manifest" href="/manifest.json"/>
+        </head>
         <body className="flex">
           {/* Hide sidebar if pathname matches any hidden path */}
           {!hiddenPaths.includes(pathname) && <SideBarIn />}
