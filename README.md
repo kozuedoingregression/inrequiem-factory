@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[InRequiem](https://nextjs.org)
+
+# InRequiem's Smartphone-Based Telemetry App
+
+## Overview
+**InRequiem** is a prototype web application that transforms a smartphone into a telemetry device for motorsports and racing enthusiasts. By leveraging built-in smartphone sensors, e-Track eliminates the need for expensive telemetry hardware while providing essential real-time data for performance analysis.
+
+## Features
+- **Dashboard**: A central hub displaying key telemetry metrics.
+- **Speedometer**: Real-time speed tracking using GPS.
+- **Lap & Sector Timing**: Measures lap times and sector performance.
+- **0-100 km/h Time**: Calculates acceleration performance.
+- **Leaderboard**: Ranks drivers based on their telemetry data.
+- **Crew System**: Allows users to form teams and compete collectively.
+- **Data Logging**: Captures and stores driving sessions for analysis.
+
+## How It Works
+1. **Setup**: Open the web app on your smartphone.
+2. **Start a Session**: Activate the telemetry mode to start recording speed and movement data.
+3. **View Live Metrics**: Monitor real-time speed, acceleration, and lap times on the dashboard.
+4. **Analyze Performance**: Access historical data and compare results.
+5. **Compete**: Join leaderboards and crew rankings to challenge other drivers.
+
+## Technologies Used
+- **Frontend**: Next.js
+- **Backend**: Node.js (Planned future enhancements)
+- **APIs**: Utilizes Web APIs for GPS and motion sensor data
+- **Storage**: Local storage and potential cloud integration for data persistence
+
+## Future Enhancements
+- **Cloud-Based Data Storage**
+- **AI-Powered Driving Insights**
+- **Support for More Sensors (e.g., Gyroscope, Accelerometer)**
+- **Advanced Visualizations & Data Export**
 
 ## Getting Started
+To try the prototype:
+1. Open the web app in your mobile browser.
+2. Allow necessary permissions for location and motion data.
+3. Start a telemetry session and track your driving performance!
 
-First, run the development server:
+---
+**Note:** This is an early-stage prototype, and some features may be under development. Feedback and contributions are welcome!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
