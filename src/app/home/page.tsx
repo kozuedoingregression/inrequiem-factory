@@ -27,12 +27,13 @@ export default function LandingPage() {
             InRequiem
           </motion.h1>
           <motion.p
-            className="text-gray-400 mt-4 text-base sm:text-lg max-w-full sm:max-w-2xl mx-auto"
+            className="text-gray-300 mt-4 text-xl sm:text-lg max-w-full sm:max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Your Personal Telemetry – No Expensive Sensors. Just Your Smartphone.
+            In every beat, in every stitch, in every circuit there's a story waiting to be told.
+            This is not just a brand. The future isn't just coming—it's being synthesized.
           </motion.p>
         </header>
 
@@ -44,7 +45,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Telemetry
+            Telemetry Synthesized by InRequiem
           </motion.h2>
 
           <motion.p
@@ -107,8 +108,8 @@ export default function LandingPage() {
       </motion.section> */}
 
       </div>
-      <a href="https://my-store-1060ee3.creator-spring.com/">Visit Store 
-      <img src="https://mockup-api.teespring.com/v3/image/5gmbpR1X5wDebkZsUlvJbMwJSNY/800/800.jpg" alt="" />
+      <a href="https://my-store-1060ee3.creator-spring.com/">Visit Store
+        <img src="https://mockup-api.teespring.com/v3/image/5gmbpR1X5wDebkZsUlvJbMwJSNY/800/800.jpg" alt="" />
       </a>
     </>
   );

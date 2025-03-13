@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import React from 'react'
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Footer from '../components/Footer';
 
 function Shop() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center text-center">
+            <div className="flex flex-col bg-black items-center justify-center text-center">
                 <h1 className="text-3xl font-bold">InRequiem Collection</h1>
                 <p className="text-gray-600 mt-2">Fast life</p>
 
@@ -30,6 +31,8 @@ function Shop() {
                     <img  src="https://mockup-api.teespring.com/v3/image/Rk3-I8UOSTc03G9HoqegXYt_7CQ/800/800.jpg" alt="" />
                 </a>
             </div>
+
+            <Footer />
         </>
     )
 }

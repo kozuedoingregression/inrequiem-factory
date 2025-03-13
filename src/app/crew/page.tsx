@@ -2,6 +2,7 @@
 import { SignedOut, SignInButton, useUser, useSession } from '@clerk/nextjs';
 import React, { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js';
+import Footer from '../components/Footer';
 
 export default function Crew() {
   const [tasks, setTasks] = useState<any[]>([])
@@ -52,6 +53,7 @@ export default function Crew() {
         <div className="text-center">
         <h1 className="text-3xl font-bold">Crew</h1>
         <p className="text-gray-600 mt-2">Fast life</p>
+        
       </div>
         {/* Logo */}
         <div className="mb-6">
@@ -67,6 +69,7 @@ export default function Crew() {
             <button className="mt-4 px-6 py-3 border border-white text-black bg-white hover:bg-gray-300 transition rounded">Sign In</button>
           </SignInButton>
         </SignedOut>
+        <Footer />
       </div>
     );
   }
@@ -79,6 +82,7 @@ export default function Crew() {
       <div className="text-center">
         <h1 className="text-3xl font-bold">Crew</h1>
         <p className="text-gray-600 mt-2">Fast life</p>
+        {loading && <p>fetching...</p>}
       </div>
 
       <div className="mt-8">
@@ -105,6 +109,7 @@ export default function Crew() {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

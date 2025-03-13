@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { SignedOut, SignInButton, useSession, useUser } from '@clerk/nextjs'
 import { createClient } from '@supabase/supabase-js'
+import Footer from '../components/Footer'
 
 export default function Drive() {
   const [tasks, setTasks] = useState<any[]>([])
@@ -79,7 +80,7 @@ export default function Drive() {
           <button className="mt-4 px-6 py-3 border border-white text-black bg-white hover:bg-gray-300 transition rounded">Sign In</button>
         </SignInButton>
       </SignedOut>
-
+      <Footer />
     </div>)
   }
 
@@ -136,32 +137,9 @@ export default function Drive() {
   }
 
   return (
-    <>
-      {/* <div>
-        <h1>Tasks</h1>
 
-        {loading && <p>Loading...</p>}
-        {!loading && tasks.length > 0 && tasks.map((task: any) => (
-          <div key={task.id}>
-            <p>Name: {task.name}</p>
-            <p>Peak: {task.peak}</p>
-            <p>User ID: {task.user_id}</p>
-          </div>
-        ))}
-        {!loading && tasks.length === 0 && <p>No tasks found</p>}
-
-        <form onSubmit={createOrUpdateTask}>
-          <input
-            type="text"
-            name="peak"
-            placeholder="Enter peak"
-            onChange={(e) => setPeak(e.target.value)}
-            value={peak}
-          />
-          <button type="submit">Add/Update Task</button>
-        </form>
-      </div> */}
-      <div className="max-w-4xl mx-auto text-center">
+    <div className='min-h-screen bg-black text-white p-6 sm:p-10'>
+      <div className="max-w-4xl bg-black mx-auto text-center">
         <h1 className="text-4xl font-bold">{username} Profile</h1>
         <p className="text-gray-400 mt-2">Track your performance and crew ranking</p>
 
@@ -212,6 +190,7 @@ export default function Drive() {
           </div>
         ))}
       </div>
-    </>
+      <Footer />
+    </div>
   )
 }

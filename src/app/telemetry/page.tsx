@@ -32,7 +32,7 @@ function Telemetry() {
         const watcher = navigator.geolocation.watchPosition(updateSpeed, console.error, {
             enableHighAccuracy: true,
             maximumAge: 0,
-            timeout: 500
+            //timeout: 500
         });
 
         return () => navigator.geolocation.clearWatch(watcher);

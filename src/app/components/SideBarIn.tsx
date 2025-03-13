@@ -8,6 +8,7 @@ import { TbHelmet } from "react-icons/tb";
 import { GrShop } from "react-icons/gr";
 import { ClerkProvider } from '@clerk/nextjs';
 import { FaSignInAlt } from "react-icons/fa";
+import { GrHelpBook } from "react-icons/gr";
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 function SideBarIn() {
@@ -47,6 +48,11 @@ function SideBarIn() {
                             <li>
                                 <Link href="/shop" className="block p-3 rounded hover:bg-gray-900">
                                     <GrShop size={28} className="text-white mx-auto" />
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/guide" className="block p-3 rounded hover:bg-gray-900">
+                                    <GrHelpBook size={28} className="text-white mx-auto" />
                                 </Link>
                             </li>
                                 <li>
