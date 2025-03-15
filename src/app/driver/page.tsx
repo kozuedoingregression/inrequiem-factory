@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 
 export default function Drive() {
   const [tasks, setTasks] = useState<any[]>([])
+  const [rank, setRank] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [peak, setPeak] = useState('')
 
@@ -58,6 +59,21 @@ export default function Drive() {
     }
 
     loadTasks()
+  }, [user])
+
+  useEffect(() => {
+    async function loadRanks() {
+      setLoading(true)
+      const { data, error } = await client.from('tasks').select()
+      if (error) {
+        console.error('Error fetching tasks:', error)
+      } else {
+        setRank(data)
+      }
+      setLoading(false)
+    }
+
+    loadRanks()
   }, [user])
 
   if (!user?.id) {
@@ -135,13 +151,14 @@ export default function Drive() {
 
     window.location.reload()
   }
-
+  const sortedRanks = [...rank].sort((a, b) => b.peak - a.peak);
+  const userRank = sortedRanks.findIndex(task => task.user_id === user?.id) + 1;
   return (
 
     <div className='min-h-screen bg-black text-white p-6 sm:p-10'>
       <div className="max-w-4xl bg-black mx-auto text-center">
         <h1 className="text-4xl font-bold">{username} Profile</h1>
-        <p className="text-gray-400 mt-2">Track your performance and crew ranking</p>
+        <p className="text-gray-400 mt-2">InRequiem</p>
 
         {/* Driver Stats */}
         {loading &&
@@ -151,7 +168,7 @@ export default function Drive() {
               <p className="text-xl font-bold">fetching...</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Traversal</h2>
+              <h2 className="text-xl font-semibold">Ranking</h2>
               <p className="text-xl font-bold">fetching...</p>
             </div>
           </div>
@@ -163,7 +180,7 @@ export default function Drive() {
               <p className="text-4xl font-bold">N/A</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Traversal</h2>
+              <h2 className="text-xl font-semibold">Ranking</h2>
               <p className="text-4xl font-bold">N/A</p>
             </div>
           </div>
@@ -176,17 +193,9 @@ export default function Drive() {
               <p className="text-4xl font-bold">{task.peak} kmph</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Traversal</h2>
-              <p className="text-4xl font-bold">0.00 km</p>
+              <h2 className="text-xl font-semibold">Ranking</h2>
+              <p className="text-4xl font-bold">#{userRank}</p>
             </div>
-            {/* <div className="bg-gray-800 p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">🏆 Crew Rank</h2>
-              <p className="text-3xl font-bold"></p>
-            </div>
-            <div className="bg-gray-800 p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">🚦 Races Completed</h2>
-              <p className="text-3xl font-bold"></p>
-            </div> */}
           </div>
         ))}
       </div>
