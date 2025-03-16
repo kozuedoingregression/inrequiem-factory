@@ -168,7 +168,7 @@ export default function Drive() {
               <p className="text-xl font-bold">fetching...</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Ranking</h2>
+              <h2 className="text-xl font-semibold">Rank</h2>
               <p className="text-xl font-bold">fetching...</p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function Drive() {
               <p className="text-4xl font-bold">N/A</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Ranking</h2>
+              <h2 className="text-xl font-semibold">Rank</h2>
               <p className="text-4xl font-bold">N/A</p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Drive() {
               <p className="text-4xl font-bold">{task.peak} kmph</p>
             </div>
             <div className="p-4 rounded-lg">
-              <h2 className="text-xl font-semibold">Ranking</h2>
+              <h2 className="text-xl font-semibold">Rank</h2>
               <p className="text-4xl font-bold">#{userRank}</p>
             </div>
           </div>
