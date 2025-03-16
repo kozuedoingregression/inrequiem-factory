@@ -160,8 +160,10 @@ export default function Drive() {
       <div className="max-w-4xl bg-black mx-auto text-center">
         <h1 className="text-4xl font-bold">{username} Profile</h1>
         <p className="text-gray-400 mt-2">InRequiem</p>
-        <div className='flex justify-center'>
-          <img src={userImage} className=" w-50 h-50 border-4 " />
+        <div className=' flex flex-col items-center justify-center'>
+          <div className='w-50 h-50 overflow-hidden border-4'>
+            <img src={userImage} className=" w-full h-full object-cover " />
+          </div>
         </div>
         {/* Driver Stats */}
         {loading &&
