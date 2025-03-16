@@ -16,8 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en">
         <head>
           <link rel="manifest" href="/manifest.json" />
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4218964130174968"
-            crossOrigin="anonymous"></script>
+          {!hiddenPaths.includes(pathname) &&
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4218964130174968"
+              crossOrigin="anonymous"></script>}
         </head>
         <body className="flex">
           {/* Hide sidebar if pathname matches any hidden path */}

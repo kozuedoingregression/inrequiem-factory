@@ -18,7 +18,8 @@ export default function Drive() {
 
   // Get the Backend API User object when you need access to the user's information
 
-  const username = user?.username + "'s"
+  const username = user?.username + "'s";
+  const userImage = user?.imageUrl;
 
   function createClerkSupabaseClient() {
     return createClient(
@@ -159,7 +160,9 @@ export default function Drive() {
       <div className="max-w-4xl bg-black mx-auto text-center">
         <h1 className="text-4xl font-bold">{username} Profile</h1>
         <p className="text-gray-400 mt-2">InRequiem</p>
-
+        <div className='flex justify-center'>
+          <img src={userImage} className=" w-50 h-50 border-4 " />
+        </div>
         {/* Driver Stats */}
         {loading &&
           <div className="mt-6 grid grid-cols-2 gap-6 text-lg">
