@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { SignedOut, SignInButton, useSession, useUser } from '@clerk/nextjs'
 import { createClient } from '@supabase/supabase-js'
 import Footer from '../components/Footer'
+import Reset from '../components/reset'
+
 
 export default function Drive() {
   const [tasks, setTasks] = useState<any[]>([])
@@ -154,6 +156,14 @@ export default function Drive() {
   }
   const sortedRanks = [...rank].sort((a, b) => b.peak - a.peak);
   const userRank = sortedRanks.findIndex(task => task.user_id === user?.id) + 1;
+
+  const resetStats = async () => {
+    if (window.confirm("Are you sure you want to reset your stats?")) {
+      console.log("Stats reset!");
+      const { data, error } = await client.from('tasks').update({ peak: 0 }).eq('name', user.username)
+      console.log(data,error);
+    }
+  };
   return (
 
     <div className='min-h-screen bg-black text-white p-6 sm:p-10'>
@@ -201,6 +211,8 @@ export default function Drive() {
               <h2 className="text-xl font-semibold">Rank</h2>
               <p className="text-4xl font-bold">#{userRank}</p>
             </div>
+            <button onClick={resetStats} className='font-bold'>Reset</button>
+            <button className='font-bold'>Share</button>
           </div>
         ))}
       </div>
