@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { SignedOut, SignInButton, useSession, useUser } from '@clerk/nextjs'
 import { createClient } from '@supabase/supabase-js'
 import Footer from '../components/Footer'
-import Reset from '../components/reset'
+
 
 
 export default function Drive() {
